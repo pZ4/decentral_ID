@@ -1,0 +1,44 @@
+<html>
+  <head></head>
+  <body>
+    <!-- <input type="text" id="qr-data" onchange="generateQR()"> -->
+    <form onsubmit="return generateQR()">
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname"> <br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname"><br>
+      <label for="address">Address:</label><br>
+      <input type="text" id="address" name="address"><br>
+      <label for="birthday">Birthday:</label><br>
+      <input type="text" id="birthday" name="birthday"><br>
+      <label for="phone">Phone number:</label><br>
+      <input type="text" id="phone" name="phone"><br>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="qrcode"></div>
+  </body>
+
+  <script src="qrcode.min.js"></script>
+
+  <script>
+   var fname = document.getElementById('fname');
+   var lname = document.getElementById('lname');
+   var address = document.getElementById('address');
+   var birthday = document.getElementById('birthday');
+   var phone = document.getElementById('phone');
+   var qrcode = new QRCode(document.getElementById('qrcode'));
+
+   function generateQR() {
+     var data =
+       "first_name: " + fname.value + "\n"
+       + "last_name: " + lname.value + "\n"
+       + "address: " + address.value + "\n"
+       + "birthday: " + birthday.value + "\n"
+       + "phone: " + phone.value + "\n"
+
+     qrcode.makeCode(data);
+     return false;
+   }
+  </script>
+
+</html>
