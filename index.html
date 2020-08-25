@@ -1,4 +1,5 @@
 <html>
+  <h1> Decentral ID: create your QR code ID </h1>
   <head></head>
   <body>
     <!-- <input type="text" id="qr-data" onchange="generateQR()"> -->
@@ -8,11 +9,13 @@
       <label for="lname">Last name:</label><br>
       <input type="text" id="lname" name="lname"><br>
       <label for="address">Address:</label><br>
-      <input type="text" id="address" name="address" size="80"><br>
+      <input type="text" id="address" name="address" size="40"><br>
       <label for="birthday">Birthday:</label><br>
       <input type="text" id="birthday" name="birthday"><br>
       <label for="phone">Phone number:</label><br>
       <input type="text" id="phone" name="phone"><br>
+      <label for="email">Email address:</label><br>
+      <input type="text" id="email" name="email" size="40"><br>
       <button type="submit">Submit</button>
     </form>
     <div id="qrcode"></div>
@@ -26,27 +29,21 @@
    var address = document.getElementById('address');
    var birthday = document.getElementById('birthday');
    var phone = document.getElementById('phone');
+   var email = document.getElementById('email');
    var qrcode = new QRCode(document.getElementById('qrcode'));
 
    function generateQR() {
      var data = new Object();
-     data.fname = fname.value;
-     data.lname = lname.value;
+     data.firstname = fname.value;
+     data.lastname = lname.value;
      data.address = address.value;
      data.birthday = birthday.value;
      data.phone = phone.value;
-     var jsonString = JSON.stringify(obj);
+     data.email = email.value;
+     var jsonString = JSON.stringify(data, null, 2);
      qrcode.makeCode(jsonString);
      return false;
    }
   </script>
 
 </html>
-
-{ "name":"John", "age":30, "car":null }
-
-var obj = new Object();
-obj.name = "Raj";
-obj.age  = 32;
-obj.married = false;
-var jsonString= JSON.stringify(obj);
