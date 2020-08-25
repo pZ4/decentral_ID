@@ -8,7 +8,7 @@
       <label for="lname">Last name:</label><br>
       <input type="text" id="lname" name="lname"><br>
       <label for="address">Address:</label><br>
-      <input type="text" id="address" name="address"><br>
+      <input type="text" id="address" name="address" size="80"><br>
       <label for="birthday">Birthday:</label><br>
       <input type="text" id="birthday" name="birthday"><br>
       <label for="phone">Phone number:</label><br>
@@ -29,16 +29,24 @@
    var qrcode = new QRCode(document.getElementById('qrcode'));
 
    function generateQR() {
-     var data =
-       "first_name: " + fname.value + "\n"
-       + "last_name: " + lname.value + "\n"
-       + "address: " + address.value + "\n"
-       + "birthday: " + birthday.value + "\n"
-       + "phone: " + phone.value + "\n"
-
-     qrcode.makeCode(data);
+     var data = new Object();
+     data.fname = fname.value;
+     data.lname = lname.value;
+     data.address = address.value;
+     data.birthday = birthday.value;
+     data.phone = phone.value;
+     var jsonString = JSON.stringify(obj);
+     qrcode.makeCode(jsonString);
      return false;
    }
   </script>
 
 </html>
+
+{ "name":"John", "age":30, "car":null }
+
+var obj = new Object();
+obj.name = "Raj";
+obj.age  = 32;
+obj.married = false;
+var jsonString= JSON.stringify(obj);
