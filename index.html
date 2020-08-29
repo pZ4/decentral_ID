@@ -1,26 +1,16 @@
-<!doctype html>
 <html lang="en">
+  <title>Decentral ID</title>
   <body style="margin:50;padding:50">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-        <title>Decentral ID</title>
-    </head>
     <h1> Decentral ID: create your QR-code ID </h1>
     <p>
-    As a customer, create your own QR-code ID privately here. Your data is
-    contained directly in the QR-code. You can be offline before entering your
-    personal data, and it will work, because no data ever leaves your device.
+      As a customer, create your own QR-code ID privately here. Your data is
+      contained directly in the QR-code. You can be offline before entering your
+      personal data, and it will work, because no data ever leaves your device.
 
-    For venues, use a QR-code reader that allows you to export the history of
-    scanned codes, such as
-    <a href="https://play.google.com/store/apps/details?id=com.teacapps.barcodescanner">QR & Barcode Reader</a> for android devices. <br><br>
-  </p>
+      For venues, use a QR-code reader that allows you to export the history of
+      scanned codes, such as
+      <a href="https://play.google.com/store/apps/details?id=com.teacapps.barcodescanner">QR & Barcode Reader</a> for android devices. <br><br>
+    </p>
     <!-- <input type="text" id="qr-data" onchange="generateQR()"> -->
     <form onsubmit="return generateQR()">
       <label for="fname">First name:</label><br>
@@ -34,11 +24,8 @@
       <label for="phone">Phone number:</label><br>
       <input type="text" id="phone" name="phone"><br>
       <label for="email">Email address:</label><br>
-      <input type="text" id="email" name="email" size="40"><br>
-      <div class="form-group">
-          &nbsp;
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <input type="text" id="email" name="email" size="40"><br><br>
+      <button type="submit" class="btn btn-primary">Submit</button><br><br>
     </form>
     <div id="qrcode"></div>
   </body>
