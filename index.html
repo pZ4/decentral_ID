@@ -28,7 +28,7 @@
       <input type="text" id="email" name="email" size="40"><br>
       <button type="submit">Submit</button>
     </form>
-    <div id="qrcode"></div>
+    <div id="qrcode" style="height:100vh;width:100vw"></div>
   </body>
 
   <script src="qrcode.min.js"></script>
@@ -40,7 +40,7 @@
    var birthday = document.getElementById('birthday');
    var phone = document.getElementById('phone');
    var email = document.getElementById('email');
-   var qrcode = new QRCode(document.getElementById('qrcode'), { width: 512, height: 512 });
+   var qrcode = new QRCode(document.getElementById('qrcode'));
 
    function generateQR() {
      var data = new Object();
